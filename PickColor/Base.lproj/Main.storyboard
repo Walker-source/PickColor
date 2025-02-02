@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KkH-fo-dm6">
                                 <rect key="frame" x="16" y="302" width="80" height="101"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q6A-oe-TAN">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q6A-oe-TAN">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="101"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ2-KH-2Ri">
@@ -47,10 +47,10 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gts-eb-sis">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gts-eb-sis">
                                         <rect key="frame" x="56" y="0.0" width="24" height="101"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CS-fO-Rtk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CS-fO-Rtk">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -71,29 +71,35 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="KkH-fo-dm6" secondAttribute="height" multiplier="80:101" id="T4i-1U-ygw"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-FU-2O7">
-                                <rect key="frame" x="116" y="297.66666666666669" width="308" height="110"/>
+                                <rect key="frame" x="174" y="297.66666666666669" width="250" height="110"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vgl-EB-wL7">
-                                        <rect key="frame" x="-2" y="0.0" width="312" height="31"/>
+                                        <rect key="frame" x="-2" y="0.0" width="254" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
                                             <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="KAW-sc-S0I"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="snv-e0-QxJ">
-                                        <rect key="frame" x="-2" y="40" width="312" height="31"/>
+                                        <rect key="frame" x="-2" y="40" width="254" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
+                                        <connections>
+                                            <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="rxw-4o-wM6"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-Kk-UzO">
-                                        <rect key="frame" x="-2" y="80" width="312" height="31"/>
+                                        <rect key="frame" x="-2" y="80" width="254" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
+                                        <connections>
+                                            <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="vPU-kz-eNJ"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Nim-Dj-q8G"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -103,7 +109,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xb-FU-2O7" secondAttribute="trailing" constant="16" id="Iuy-Tr-VVj"/>
                             <constraint firstItem="1xb-FU-2O7" firstAttribute="centerY" secondItem="KkH-fo-dm6" secondAttribute="centerY" id="XJ9-HF-RZP"/>
                             <constraint firstItem="FY4-yb-NHr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bld-ia-PID"/>
-                            <constraint firstItem="1xb-FU-2O7" firstAttribute="leading" secondItem="KkH-fo-dm6" secondAttribute="trailing" constant="20" id="gSN-8s-asD"/>
                             <constraint firstItem="KkH-fo-dm6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kJc-DV-F07"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FY4-yb-NHr" secondAttribute="trailing" constant="16" id="kbS-yq-26o"/>
                             <constraint firstItem="FY4-yb-NHr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.156904" id="w9t-uB-WDO"/>

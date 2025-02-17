@@ -47,6 +47,9 @@ final class ViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1.0
         )
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
+        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
     }
 }
 

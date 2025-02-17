@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickColor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PickColor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,21 +79,21 @@
                                         <rect key="frame" x="-2" y="0.0" width="284" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="colorSlidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Bt-Rg-Znw"/>
+                                            <action selector="pickColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="zy9-IN-RVN"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="snv-e0-QxJ">
                                         <rect key="frame" x="-2" y="40" width="284" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="colorSlidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="uL2-WK-uIb"/>
+                                            <action selector="pickColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="dz1-qd-Ixg"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-Kk-UzO">
                                         <rect key="frame" x="-2" y="80" width="284" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="colorSlidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="c5o-7e-8GZ"/>
+                                            <action selector="pickColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="adW-yq-T0P"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -114,13 +114,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="eYI-Kk-UzO" id="DdN-4K-xV4"/>
-                        <outlet property="blueValueLabel" destination="Xlg-5L-62C" id="ruw-rG-EEl"/>
-                        <outlet property="colorView" destination="FY4-yb-NHr" id="fMu-Zl-M3o"/>
-                        <outlet property="greenSlider" destination="snv-e0-QxJ" id="aaG-uQ-Do4"/>
-                        <outlet property="greenValueLabel" destination="WaL-9T-6sC" id="XNY-he-dGL"/>
-                        <outlet property="redSlider" destination="vgl-EB-wL7" id="Y3K-1D-PSu"/>
-                        <outlet property="redValueLabel" destination="6CS-fO-Rtk" id="dTD-hx-4gD"/>
+                        <outlet property="blueLabel" destination="Xlg-5L-62C" id="0kj-dA-NWd"/>
+                        <outlet property="blueSlider" destination="eYI-Kk-UzO" id="bdF-IN-Fd3"/>
+                        <outlet property="colorView" destination="FY4-yb-NHr" id="Jh6-sL-4cS"/>
+                        <outlet property="greenLabel" destination="WaL-9T-6sC" id="udr-J9-aNE"/>
+                        <outlet property="greenSlider" destination="snv-e0-QxJ" id="ff2-bb-uTe"/>
+                        <outlet property="redLabel" destination="6CS-fO-Rtk" id="Jsm-eR-fzU"/>
+                        <outlet property="redSlider" destination="vgl-EB-wL7" id="uBk-8l-9KX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,19 +133,19 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

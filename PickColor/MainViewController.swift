@@ -16,18 +16,17 @@ protocol ColorPickerVCDelegate: AnyObject {
 }
 
 final class MainViewController: UIViewController {
-    var viewColor = UIColor.white
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = viewColor
+        view.backgroundColor = .white
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let colorPickerVC = segue.destination as? ColorPickerViewController
-        colorPickerVC?.viewColor = viewColor
+        colorPickerVC?.viewColor = view.backgroundColor
         colorPickerVC?.delegate = self
     }
 }
@@ -36,6 +35,5 @@ final class MainViewController: UIViewController {
 extension MainViewController: ColorPickerVCDelegate {
     func getViewColor(_ color: UIView ) {
         view.backgroundColor = color.backgroundColor
-        viewColor = color.backgroundColor ?? UIColor.white
     }
 }

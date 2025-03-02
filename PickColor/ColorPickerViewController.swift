@@ -81,7 +81,7 @@ extension Float {
 }
 // MARK: - UIColor
  extension UIColor {
-    var coreImageColor: CIColor {
+    var color: CIColor {
         CIColor(color: self)
     }
     var components: (
@@ -90,7 +90,7 @@ extension Float {
         blue: Float,
         alpha: Float
     ) {
-        let coreImageColor = self.coreImageColor
+        let coreImageColor = self.color
         return (
             Float(coreImageColor.red),
             Float(coreImageColor.green),

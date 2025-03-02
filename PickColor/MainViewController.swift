@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 /// Берём цвет с UIView
 protocol ColorPickerVCDelegate: AnyObject {
     

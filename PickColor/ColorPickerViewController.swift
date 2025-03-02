@@ -8,7 +8,7 @@
 import UIKit
 
 class ColorPickerViewController: UIViewController {
-// MARK: - IB Outlets
+    // MARK: - IB Outlets
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redLabel: UILabel!
@@ -19,12 +19,12 @@ class ColorPickerViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-// MARK: - Public Properties
+    // MARK: - Public Properties
     weak var delegate: ColorPickerVCDelegate?
     
     var viewColor: UIColor!
     
-// MARK: - View Life Cycles
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +36,7 @@ class ColorPickerViewController: UIViewController {
         blueLabel.text = string(from: blueSlider)
     }
     
-// MARK: - IB Actions
+    // MARK: - IB Actions
     @IBAction private func pickColor(_ sender: UISlider) {
         setColor()
         
@@ -90,12 +90,12 @@ extension Float {
         blue: Float,
         alpha: Float
     ) {
-        let coreImageColor = self.color
+        let color = self.color
         return (
-            Float(coreImageColor.red),
-            Float(coreImageColor.green),
-            Float(coreImageColor.blue),
-            Float(coreImageColor.alpha)
+            Float(color.red),
+            Float(color.green),
+            Float(color.blue),
+            Float(color.alpha)
         )
     }
 }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 /// Берём цвет с UIView
 protocol ColorPickerVCDelegate: AnyObject {
     
@@ -25,7 +24,7 @@ final class MainViewController: UIViewController {
         view.backgroundColor = viewColor
     }
     
-// MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let colorPickerVC = segue.destination as? ColorPickerViewController
         colorPickerVC?.viewColor = viewColor

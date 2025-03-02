@@ -10,7 +10,7 @@ import UIKit
 /// Берём цвет с UIView
 protocol ColorPickerVCDelegate: AnyObject {
     
-    /// Присваиваем экрану цвет с экрана настроек
+    /// Берём  цвет с экрана настроек
     /// - Parameter color: Цвет экрана настроек
     func getViewColor(_ color: UIView)
 }

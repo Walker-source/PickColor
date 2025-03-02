@@ -19,11 +19,17 @@ class ColorPickerViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+// MARK: - Public Properties
+    weak var delegate: ColorPickerVCDelegate?
+    
+    var viewColor: UIColor!
+    
 // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = 15
+        setSliders(From: viewColor)
         setColor()
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
@@ -43,8 +49,12 @@ class ColorPickerViewController: UIViewController {
             blueLabel.text = string(from: blueSlider)
         }
     }
-   
-// MARK: - Private Methods
+    @IBAction func doneDidTapped() {
+        delegate?.getViewColor(colorView)
+        dismiss(animated: true)
+    }
+    
+    // MARK: - Private Methods
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: redSlider.value.cgFloat(),
@@ -56,10 +66,36 @@ class ColorPickerViewController: UIViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    private func setSliders(From color: UIColor) {
+        redSlider.value = color.components.red
+        greenSlider.value = color.components.green
+        blueSlider.value = color.components.blue
+    }
 }
 
+// MARK: - Float
 extension Float {
     func cgFloat() -> CGFloat {
         CGFloat(self)
+    }
+}
+// MARK: - UIColor
+ extension UIColor {
+    var coreImageColor: CIColor {
+        CIColor(color: self)
+    }
+    var components: (
+        red: Float,
+        green: Float,
+        blue: Float,
+        alpha: Float
+    ) {
+        let coreImageColor = self.coreImageColor
+        return (
+            Float(coreImageColor.red),
+            Float(coreImageColor.green),
+            Float(coreImageColor.blue),
+            Float(coreImageColor.alpha)
+        )
     }
 }
